@@ -33,7 +33,7 @@ Output:
 
 ## Platforms
 
-Tested by CI on:
+CI tests the project on:
 
 - macOS
 - Windows
@@ -44,10 +44,19 @@ Docker is also supported.
 
 Browsers supported for authenticated cookies include Chrome, Chromium, Firefox, Edge, Brave, Opera, Vivaldi, and Safari where supported by yt-dlp.
 
-## macOS / Linux install
+## Get SoundCloudOpen
+
+Clone the public repository:
 
 ```bash
-./scripts/install.sh
+git clone https://github.com/sonoxo/soundcloudopen.git
+cd soundcloudopen
+```
+
+### macOS / Linux
+
+```bash
+bash scripts/install.sh
 ```
 
 Or manually:
@@ -62,11 +71,13 @@ FFmpeg must be installed. On macOS:
 brew install ffmpeg
 ```
 
-## Windows install
+### Windows
 
 From PowerShell:
 
 ```powershell
+git clone https://github.com/sonoxo/soundcloudopen.git
+cd soundcloudopen
 Set-ExecutionPolicy -Scope Process Bypass
 .\scripts\install.ps1
 ```
