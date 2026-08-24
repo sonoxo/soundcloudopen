@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soundcloudopen"
+version = "1.0.0"
+description = "Cross-platform SoundCloud playlist and artwork downloader powered by yt-dlp"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "sonoxo"}]
+keywords = ["soundcloud", "yt-dlp", "playlist", "artwork", "audio"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: MacOS",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = ["yt-dlp>=2025.1.1"]
+
+[project.scripts]
+soundcloudopen = "soundcloudopen.cli:main"
+sco = "soundcloudopen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
