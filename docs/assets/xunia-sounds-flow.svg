@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" role="img" aria-labelledby="title desc">
+<title id="title">XUNIA SOUNDS beginner function map</title>
+<desc id="desc">A beginner-friendly map showing a music idea moving from the user to VIRGINIA, Claude, the BeatStars MCP connector, BeatStars candidates and licensing, then optional authorized SoundCloud media into SoundCloudOpen and XUNIA SOUNDS evidence.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050611"/><stop offset=".55" stop-color="#0c1530"/><stop offset="1" stop-color="#27103f"/></linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4af3ff"/><stop offset="1" stop-color="#a46dff"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#62efff"/></marker>
+  <style>
+    text{font-family:Inter,Segoe UI,Arial,sans-serif}.eyebrow{font-size:14px;fill:#62f3ff;font-weight:800;letter-spacing:4px}.hero{font-size:46px;fill:#fff;font-weight:900}.sub{font-size:17px;fill:#a9b6d5}.card{fill:#0a1226;stroke:#334e77;stroke-width:2}.hot{fill:#10102d;stroke:url(#edge);stroke-width:2.5}.green{fill:#071d1c;stroke:#76ffbd;stroke-width:2}.label{font-size:12px;fill:#65f1ff;font-weight:800;letter-spacing:2px}.title{font-size:22px;fill:#fff;font-weight:850}.body{font-size:13px;fill:#bbc8e1}.code{font-size:12px;fill:#a8ff60;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.line{fill:none;stroke:#62efff;stroke-width:2.5;marker-end:url(#arrow)}
+  </style>
+</defs>
+<rect width="1500" height="760" rx="32" fill="url(#bg)"/>
+<text x="65" y="65" class="eyebrow">XUNIA SOUNDS // 3LM CLAUDE // BEATSTARS // VIRGINIA</text>
+<text x="65" y="120" class="hero">WHAT HAPPENS WHEN YOU DESCRIBE A SOUND</text>
+<text x="65" y="155" class="sub">Beginner view first. Every box represents a real responsibility in the integration.</text>
+
+<g transform="translate(60 220)"><rect width="210" height="150" rx="20" class="hot"/><text x="18" y="32" class="label">1 // YOU</text><text x="18" y="70" class="title">DESCRIBE IT</text><text x="18" y="98" class="body">“Dark melodic trap,”</text><text x="18" y="120" class="body">“warm soul,” “club energy”</text></g>
+<g transform="translate(310 220)"><rect width="210" height="150" rx="20" class="card"/><text x="18" y="32" class="label">2 // VIRGINIA</text><text x="18" y="70" class="title">MAKE THE PLAN</text><text x="18" y="98" class="body">Turns your idea into</text><text x="18" y="120" class="body">clear workflow steps.</text></g>
+<g transform="translate(560 220)"><rect width="210" height="150" rx="20" class="card"/><text x="18" y="32" class="label">3 // 3LM CLAUDE</text><text x="18" y="70" class="title">USE THE TOOLS</text><text x="18" y="98" class="body">Claude talks to the</text><text x="18" y="120" class="body">connected BeatStars MCP.</text></g>
+<g transform="translate(810 220)"><rect width="260" height="150" rx="20" class="hot"/><text x="18" y="32" class="label">4 // BEATSTARS MCP</text><text x="18" y="70" class="title">SEARCH BEATS</text><text x="18" y="98" class="body">Remote BeatStars tools</text><text x="18" y="120" class="code">mcp.beatstars.com/mcp</text></g>
+<g transform="translate(1110 220)"><rect width="320" height="150" rx="20" class="green"/><text x="18" y="32" class="label">5 // BEATSTARS</text><text x="18" y="70" class="title">REVIEW + LICENSE</text><text x="18" y="98" class="body">Preview matching candidates.</text><text x="18" y="120" class="body">Open BeatStars to review rights/license.</text></g>
+
+<path class="line" d="M270 295H302"/><path class="line" d="M520 295H552"/><path class="line" d="M770 295H802"/><path class="line" d="M1070 295H1102"/>
+
+<g transform="translate(230 470)"><rect width="450" height="170" rx="22" class="card"/><text x="20" y="34" class="label">6 // OPTIONAL SOUNDCLOUD SOURCE</text><text x="20" y="72" class="title">YOUR AUTHORIZED MEDIA</text><text x="20" y="103" class="body">SoundCloudOpen can organize SoundCloud audio you own,</text><text x="20" y="126" class="body">downloads SoundCloud permits, or media you may otherwise save.</text><text x="20" y="150" class="code">--soundcloud https://soundcloud.com/...</text></g>
+<g transform="translate(820 470)"><rect width="450" height="170" rx="22" class="green"/><text x="20" y="34" class="label">7 // XUNIA SOUNDS EVIDENCE</text><text x="20" y="72" class="title">ONE WORKFLOW RECORD</text><text x="20" y="103" class="body">Beat discovery intent + BeatStars connector + optional</text><text x="20" y="126" class="body">authorized SoundCloud source are returned as mission JSON.</text><text x="20" y="150" class="code">xunia-sounds "your sound idea" --json mission.json</text></g>
+<path class="line" d="M1270 370V430H1045V462"/><path class="line" d="M680 555H812"/>
+
+<text x="65" y="708" class="sub">Important: the BeatStars connector is used for the tools it exposes at runtime. This repo does not invent a private BeatStars upload API or bypass licensing.</text>
+</svg>
