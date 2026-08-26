@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">SOUNDCLOUD OPEN command-center overview</title><desc id="desc">AUTHORIZED LINK to YT-DLP CORE to ART + METADATA to ORGANIZED FILES</desc>
+<defs>
+ <radialGradient id="bg"><stop stop-color="#15103b"/><stop offset="1" stop-color="#03040b"/></radialGradient>
+ <linearGradient id="neon"><stop stop-color="#ff8a00"/><stop offset=".48" stop-color="#ff2bd6"/><stop offset="1" stop-color="#6cf6ff"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#6cf6ff" stroke-opacity=".08"/></pattern>
+ <style>
+ text{font-family:Inter,Segoe UI,Arial,sans-serif}.orbit{transform-origin:600px 265px;animation:spin 18s linear infinite}.pulse{animation:pulse 2.8s ease-in-out infinite}.dash{stroke-dasharray:12 12;animation:dash 1.5s linear infinite}
+ @keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.45}}@keyframes dash{to{stroke-dashoffset:-48}}
+ @media(prefers-reduced-motion:reduce){.orbit,.pulse,.dash{animation:none}}
+ </style>
+</defs>
+<rect width="1200" height="500" rx="28" fill="url(#bg)"/><rect width="1200" height="500" rx="28" fill="url(#grid)"/>
+<path d="M40 30H300M900 30h260M40 470h260M900 470h260" stroke="url(#neon)" stroke-width="3" opacity=".8"/>
+<g class="orbit" fill="none" stroke="url(#neon)" opacity=".3"><ellipse cx="600" cy="265" rx="168" ry="92"/><ellipse cx="600" cy="265" rx="222" ry="132"/></g>
+<text x="600" y="82" text-anchor="middle" font-size="42" font-weight="800" letter-spacing="7" fill="#fff">SOUNDCLOUD OPEN</text>
+<text x="600" y="116" text-anchor="middle" font-size="14" letter-spacing="5" fill="#9ffaff">CREATOR-OWNED MEDIA WORKFLOW</text>
+<g stroke="url(#neon)" stroke-width="4" fill="none" class="dash"><path d="M220 280H390"/><path d="M500 280H670"/><path d="M780 280H950"/></g>
+<g class="pulse" style="animation-delay:0s"><rect x="115" y="224" width="170" height="112" rx="20" fill="#090b1c" stroke="url(#neon)" stroke-width="2"/><circle cx="200" cy="252" r="8" fill="#6cf6ff" filter="url(#glow)"/><text x="200" y="292" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="1.2" fill="#fff">AUTHORIZED LINK</text><text x="200" y="315" text-anchor="middle" font-size="11" fill="#aab4d6">01 / 04</text></g><g class="pulse" style="animation-delay:0.35s"><rect x="395" y="224" width="170" height="112" rx="20" fill="#090b1c" stroke="url(#neon)" stroke-width="2"/><circle cx="480" cy="252" r="8" fill="#6cf6ff" filter="url(#glow)"/><text x="480" y="292" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="1.2" fill="#fff">YT-DLP CORE</text><text x="480" y="315" text-anchor="middle" font-size="11" fill="#aab4d6">02 / 04</text></g><g class="pulse" style="animation-delay:0.7s"><rect x="675" y="224" width="170" height="112" rx="20" fill="#090b1c" stroke="url(#neon)" stroke-width="2"/><circle cx="760" cy="252" r="8" fill="#6cf6ff" filter="url(#glow)"/><text x="760" y="292" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="1.2" fill="#fff">ART + METADATA</text><text x="760" y="315" text-anchor="middle" font-size="11" fill="#aab4d6">03 / 04</text></g><g class="pulse" style="animation-delay:1.0499999999999998s"><rect x="955" y="224" width="170" height="112" rx="20" fill="#090b1c" stroke="url(#neon)" stroke-width="2"/><circle cx="1040" cy="252" r="8" fill="#6cf6ff" filter="url(#glow)"/><text x="1040" y="292" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="1.2" fill="#fff">ORGANIZED FILES</text><text x="1040" y="315" text-anchor="middle" font-size="11" fill="#aab4d6">04 / 04</text></g>
+<text x="600" y="406" text-anchor="middle" font-size="13" letter-spacing="3" fill="#ffb04f">SONOXO ECOSYSTEM // WORKING CLI</text>
+<circle cx="70" cy="70" r="3" fill="#ff2bd6"/><circle cx="1100" cy="420" r="3" fill="#6cf6ff"/><circle cx="1050" cy="90" r="2" fill="#ff8a00"/>
+</svg>
