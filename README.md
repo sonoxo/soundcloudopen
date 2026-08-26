@@ -1,211 +1,51 @@
-# SoundCloudOpen
+<div align="center">
 
-SoundCloudOpen is a free, open-source, cross-platform command-line frontend for `yt-dlp` that bulk-downloads SoundCloud playlists/tracks together with artwork and metadata.
+![SOUNDCLOUD OPEN command-center flow](docs/assets/command-center.svg)
 
-> Use SoundCloudOpen only for audio you own, content SoundCloud explicitly permits you to download, or content you otherwise have permission to save. It does not bypass SoundCloud account permissions or DRM.
+# SOUNDCLOUD OPEN
+
+**CREATOR-OWNED MEDIA WORKFLOW**
+
+[![Sonoxo](https://img.shields.io/badge/SONOXO-ECOSYSTEM-7c3aed?style=for-the-badge)](https://github.com/sonoxo)
+![Status](https://img.shields.io/badge/STATUS-WORKING%20CLI-111827?style=for-the-badge)
+
+</div>
 
 ## What it does
 
-The default download mirrors the working workflow:
+SoundCloudOpen is a cross-platform Python command-line frontend for `yt-dlp`. It organizes permitted SoundCloud tracks or playlists with artwork and available metadata.
 
-- downloads the whole playlist
-- continues past individual failures
-- resumes interrupted downloads
-- does not overwrite completed files
-- saves separate JPG artwork for every track
-- embeds artwork into the audio file
-- embeds available metadata
-- converts audio to high-quality MP3 by default
-- numbers files in playlist order
-- supports authenticated/private playlists by reading cookies from your own browser session
+> Use it only for audio you own, downloads SoundCloud permits, or material you otherwise have permission to save. It does not bypass DRM or account permissions.
 
-Output:
+## The four-step flow
 
-```text
-~/Music/SoundCloud/
-└── Playlist Name/
-    ├── 001 - Artist - Track.mp3
-    ├── 002 - Artist - Track.mp3
-    └── Artwork/
-        ├── 001 - Artist - Track.jpg
-        └── 002 - Artist - Track.jpg
-```
+1. Give the CLI an authorized SoundCloud URL.
+2. SoundCloudOpen builds the `yt-dlp` job and can use your own browser session for content you may access.
+3. FFmpeg converts audio and embeds available artwork and metadata.
+4. Numbered tracks and separate JPG covers land in an organized playlist folder.
 
-## Platforms
-
-CI tests the project on:
-
-- macOS
-- Windows
-- Linux
-- Python 3.10 and 3.12
-
-Docker is also supported.
-
-Browsers supported for authenticated cookies include Chrome, Chromium, Firefox, Edge, Brave, Opera, Vivaldi, and Safari where supported by yt-dlp.
-
-## Get SoundCloudOpen
-
-Clone the public repository:
+## Quick start
 
 ```bash
 git clone https://github.com/sonoxo/soundcloudopen.git
 cd soundcloudopen
-```
-
-### macOS / Linux
-
-```bash
-bash scripts/install.sh
-```
-
-Or manually:
-
-```bash
 python3 -m pip install .
-```
-
-FFmpeg must be installed. On macOS:
-
-```bash
-brew install ffmpeg
-```
-
-### Windows
-
-From PowerShell:
-
-```powershell
-git clone https://github.com/sonoxo/soundcloudopen.git
-cd soundcloudopen
-Set-ExecutionPolicy -Scope Process Bypass
-.\scripts\install.ps1
-```
-
-## Check the setup
-
-```bash
 soundcloudopen --check
+soundcloudopen --browser chrome "PLAYLIST_URL"
 ```
 
-Short alias:
+Install FFmpeg separately. Use `--browser none` for public content without browser-cookie access.
 
-```bash
-sco --check
-```
-
-## Download a playlist
-
-```bash
-soundcloudopen "https://soundcloud.com/USERNAME/sets/PLAYLIST"
-```
-
-For a private playlist visible in Chrome:
-
-```bash
-soundcloudopen --browser chrome "https://soundcloud.com/USERNAME/sets/PLAYLIST"
-```
-
-Browser auto-detection is enabled by default:
-
-```bash
-soundcloudopen "https://soundcloud.com/USERNAME/sets/PLAYLIST"
-```
-
-For a public playlist with no browser-cookie access:
-
-```bash
-soundcloudopen --browser none "https://soundcloud.com/USERNAME/sets/PLAYLIST"
-```
-
-## Working example
-
-```bash
-soundcloudopen --browser chrome "https://soundcloud.com/almightysonoxo/sets/all-songs"
-```
-
-## Choose another output folder
-
-macOS/Linux:
-
-```bash
-soundcloudopen -o "$HOME/Desktop/SoundCloud" "PLAYLIST_URL"
-```
-
-Windows PowerShell:
-
-```powershell
-soundcloudopen -o "$HOME\Desktop\SoundCloud" "PLAYLIST_URL"
-```
-
-## Other audio formats
-
-```bash
-soundcloudopen --format m4a "PLAYLIST_URL"
-soundcloudopen --format flac "PLAYLIST_URL"
-soundcloudopen --format wav "PLAYLIST_URL"
-soundcloudopen --format opus "PLAYLIST_URL"
-```
-
-Note: converting a lossy SoundCloud source to FLAC/WAV does not increase original source quality.
-
-## Save metadata JSON too
-
-```bash
-soundcloudopen --save-json "PLAYLIST_URL"
-```
-
-## List tracks without downloading
+## Useful commands
 
 ```bash
 soundcloudopen --list "PLAYLIST_URL"
+soundcloudopen --save-json "PLAYLIST_URL"
+soundcloudopen --format m4a "PLAYLIST_URL"
+sco --check
 ```
 
-## See the exact yt-dlp command
-
-```bash
-soundcloudopen --print-command --browser chrome "PLAYLIST_URL"
-```
-
-## Docker
-
-Build:
-
-```bash
-docker build -t soundcloudopen .
-```
-
-Public playlist example:
-
-```bash
-docker run --rm -v "$HOME/Music/SoundCloud:/root/Music/SoundCloud" soundcloudopen --browser none "PLAYLIST_URL"
-```
-
-Browser cookie extraction is intended for native installs because host-browser cookie databases are not automatically available inside a container.
-
-## Under the hood
-
-The core download intentionally maps to these yt-dlp options:
-
-```text
---yes-playlist
---ignore-errors
---continue
---no-overwrites
---write-thumbnail
---convert-thumbnails jpg
---embed-thumbnail
---embed-metadata
---extract-audio
---audio-format mp3
---audio-quality 0
-```
-
-Authenticated playlists add:
-
-```text
---cookies-from-browser <browser>
-```
+Supported output formats include MP3, M4A, FLAC, WAV, and Opus. Converting a lossy source to FLAC or WAV does not restore lost quality.
 
 ## Development
 
@@ -214,6 +54,18 @@ python3 -m pip install -e . pytest
 pytest -q
 ```
 
+CI targets macOS, Windows, Linux, Python 3.10, and Python 3.12. Docker support is included; host browser-cookie extraction is intended for native installs.
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
+
+---
+
+<div align="center">
+
+**SONOXO ECOSYSTEM** · Built to make complex tools understandable
+
+The header animation automatically becomes static when your system requests reduced motion.
+
+</div>
