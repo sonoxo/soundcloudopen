@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "soundcloudopen"
-version = "1.1.0"
-description = "Creator-owned SoundCloud workflow with XUNIA SOUNDS, Claude MCP, BeatStars discovery, and VIRGINIA mission planning"
+version = "1.2.0"
+description = "Creator-owned SoundCloud workflow with XUNIA SOUNDS, Claude MCP, BeatStars intelligent discovery, and VIRGINIA mission planning"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
