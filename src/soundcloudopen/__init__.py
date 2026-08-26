@@ -1,3 +1,3 @@
-"""SoundCloudOpen: cross-platform SoundCloud playlist downloader frontend for yt-dlp."""
+"""SoundCloudOpen: creator-owned SoundCloud workflow with XUNIA SOUNDS integrations."""
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
