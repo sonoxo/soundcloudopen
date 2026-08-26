@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "soundcloudopen"
-version = "1.0.0"
-description = "Cross-platform SoundCloud playlist and artwork downloader powered by yt-dlp"
+version = "1.1.0"
+description = "Creator-owned SoundCloud workflow with XUNIA SOUNDS, Claude MCP, BeatStars discovery, and VIRGINIA mission planning"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "sonoxo"}]
-keywords = ["soundcloud", "yt-dlp", "playlist", "artwork", "audio"]
+keywords = ["soundcloud", "yt-dlp", "playlist", "artwork", "audio", "beatstars", "claude", "mcp", "virginia"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: MacOS",
@@ -22,6 +22,8 @@ dependencies = ["yt-dlp>=2025.1.1"]
 [project.scripts]
 soundcloudopen = "soundcloudopen.cli:main"
 sco = "soundcloudopen.cli:main"
+xunia-sounds = "soundcloudopen.xunia_sounds:main"
+xuniasounds = "soundcloudopen.xunia_sounds:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
