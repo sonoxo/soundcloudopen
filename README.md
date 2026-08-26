@@ -22,13 +22,13 @@ SoundCloudOpen is a cross-platform Python command-line frontend for `yt-dlp`. It
 
 ![XUNIA SOUNDS beginner function map](docs/assets/xunia-sounds-flow.svg)
 
-**You describe the sound → VIRGINIA makes the plan → 3LM CLAUDE uses the BeatStars MCP connector → you review matching beats → BeatStars handles the license → SoundCloudOpen can optionally organize SoundCloud media you are allowed to save → XUNIA SOUNDS gives you one JSON workflow record.**
+**You describe the sound → VIRGINIA expands the idea → 3LM CLAUDE uses the BeatStars MCP connector → BeatStars intelligent search finds matches → you preview and compare them → you open the beat on BeatStars → you review the producer's license → SoundCloudOpen can optionally organize SoundCloud media you are allowed to save → XUNIA SOUNDS gives you one JSON workflow record.**
 
-That is the new integration. It does not replace the original SoundCloud downloader.
+That integration is additive. It does not replace the original SoundCloud downloader.
 
 ### First-time BeatStars / Claude setup
 
-After installing this branch, run:
+After installing SoundCloudOpen, run:
 
 ```bash
 xunia-sounds --claude-setup
@@ -40,12 +40,12 @@ It prints the beginner connector setup for Claude using:
 https://mcp.beatstars.com/mcp
 ```
 
-Claude handles the connector authentication and permissions. SoundCloudOpen does not ask for or store your BeatStars password.
+Claude handles connector authentication and permissions. SoundCloudOpen does not ask for or store your BeatStars password.
 
 ### Ask for a sound
 
 ```bash
-xunia-sounds "dark melodic trap with cold synths around 90 BPM"
+xunia-sounds "dark melodic trap with cold synths"
 ```
 
 XUNIA SOUNDS returns a VIRGINIA-style mission that keeps the roles easy to understand:
@@ -53,12 +53,38 @@ XUNIA SOUNDS returns a VIRGINIA-style mission that keeps the roles easy to under
 | Part | Beginner meaning | Job |
 |---|---|---|
 | **You** | The creative director | Describe the sound you want |
-| **VIRGINIA** | The plan | Turn the idea into clear workflow steps |
-| **3LM CLAUDE** | The tool operator | Use the connected tools in the conversation |
-| **BeatStars MCP** | The BeatStars doorway | Expose the BeatStars tools available at connection time |
-| **BeatStars** | Discovery + licensing destination | Review candidates and obtain the license you need |
+| **VIRGINIA** | The plan | Expand the idea into clear discovery + review steps |
+| **3LM CLAUDE** | The tool operator | Use the BeatStars connector in the conversation |
+| **BeatStars MCP** | The BeatStars doorway | Expose the tools BeatStars makes available at connection time |
+| **BeatStars** | Intelligent discovery + licensing destination | Find candidates, preview them, then open the full beat page |
 | **SoundCloudOpen** | Your local media organizer | Handle SoundCloud media you own or are allowed to save |
-| **XUNIA SOUNDS JSON** | The receipt | Record what the workflow was supposed to do |
+| **XUNIA SOUNDS JSON** | The receipt | Record the requested workflow, filters, and evidence state |
+
+### Make BeatStars discovery precise without learning search syntax
+
+```bash
+xunia-sounds \
+  "cold melodic trap with space for vocals" \
+  --genre trap \
+  --mood "haunting but confident" \
+  --bpm 92 \
+  --use-case "album single" \
+  --count 5
+```
+
+Those controls become one natural-language BeatStars discovery request. XUNIA SOUNDS asks the connected workflow to return candidates, explain why they fit, preview them in Claude when supported, and hand the selected result back to BeatStars for full listening and license review.
+
+For a copy/paste-ready Claude request only:
+
+```bash
+xunia-sounds \
+  "warm live-feeling drums and dusty keys" \
+  --genre "soulful hip-hop" \
+  --mood "melancholy but hopeful" \
+  --bpm 85 \
+  --count 5 \
+  --prompt-only
+```
 
 ### Combine BeatStars discovery with an authorized SoundCloud source
 
@@ -72,7 +98,7 @@ xunia-sounds \
 
 The SoundCloud URL is checked by the same validation already used by SoundCloudOpen. The generated mission labels it as an `authorized-media-source`.
 
-> XUNIA SOUNDS does **not** invent a private BeatStars upload API. The BeatStars connector is treated as a remote MCP tool provider, and Claude discovers the tools BeatStars actually exposes. Licensing remains on BeatStars.
+> XUNIA SOUNDS does **not** invent a private BeatStars upload API. The BeatStars connector is treated as a remote MCP tool provider, and Claude discovers the tools BeatStars actually exposes. Producers control their own license terms, so licensing remains a BeatStars review step.
 
 Full beginner guide: [XUNIA SOUNDS / 3LM CLAUDE / BEATSTARS / VIRGINIA](docs/XUNIA_SOUNDS.md)
 
@@ -103,7 +129,8 @@ soundcloudopen --save-json "PLAYLIST_URL"
 soundcloudopen --format m4a "PLAYLIST_URL"
 sco --check
 xunia-sounds --claude-setup
-xunia-sounds "warm soulful beat around 85 BPM"
+xunia-sounds "warm soulful beat" --bpm 85 --mood hopeful --count 5
+xunia-sounds "dark trap" --bpm 90 --count 3 --prompt-only
 ```
 
 Supported output formats include MP3, M4A, FLAC, WAV, and Opus. Converting a lossy source to FLAC or WAV does not restore lost quality.
@@ -117,7 +144,7 @@ pytest -q
 
 CI targets macOS, Windows, Linux, Python 3.10, and Python 3.12. Docker support is included; host browser-cookie extraction is intended for native installs.
 
-The XUNIA SOUNDS tests verify the BeatStars MCP endpoint constant, VIRGINIA/3LM CLAUDE mission structure, SoundCloud URL validation, and JSON mission export.
+The XUNIA SOUNDS tests verify the BeatStars MCP endpoint, VIRGINIA/3LM CLAUDE mission structure, intelligent discovery prompt expansion, BPM/genre/mood/use-case controls, result-count validation, SoundCloud URL validation, prompt-only output, and JSON mission export.
 
 ## License
 
